@@ -1,0 +1,17 @@
+/* 
+	Anything that should apply to the entire project goes here. That's probably only going to be the phone background, honestly.
+
+	We might want more files along this vein later, but if we go that route they still won't be linked into *every* page.
+					*/
+
+body {
+	background-image: url("images/iphoneOL.jpg");
+	background-repeat: no-repeat;
+	font-family: Times New Roman, sans-serif;
+}
+
+#screen {
+	height: 530px;
+	width: 300px;
+	margin: 105px 23px;
+}
