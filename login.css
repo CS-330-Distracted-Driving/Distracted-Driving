@@ -1,6 +1,66 @@
-.registration-link {
-	text-align: center; 
-	text-decoration: underline; 
-	color: red; 
+
+#screen{
+	background-color: cornflowerblue;
 }
+
+.container {
+	position: relative;
+	top: 310px;
+	left: 35px;
+}
+
+.enterUsername {
+position: relative;
+left: 0px;
+margin-bottom: 5px;
+font-size: 20;
+}
+
+.enterPassword {
+position: relative;
+left: 2px;
+margin-bottom: 5px;
+font-size: 20;
+}
+
+.login{
+	position: relative;
+	top: 282px;
+	left: 180px;
+}
+
+.login-button
+{
+	font-size: 20;
+	right: 50px;
+}
+
+.register {
+	margin: 10px;
+	position: relative;
+	left: 140px;
+	top: 318px;
+}
+
+.register-button{
+	font-size: 20;
+	right: 20px;
+	top:45px;
+}
+
+.appInfo {
+	position: relative;
+	top: -95px;
+	text-align: center;
+}
+
+.appTitle{
+	position: relative;
+	left: 81px;
+	bottom: 90px;
+	color: white;
+	font-size: 30;
+	margin: 0px;
+}
+
 	
