@@ -19,3 +19,45 @@ from users.txt to current-user.txt
 page, write everything but the username into a struct, and replace the struct that the username currently maps to with the new struct,
 by way of writing the new struct to users.txt (and possibly current-user.txt?)
 */
+
+var userDict = {};
+
+class user {
+	constructor(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.password = password;
+		this.boolRewardsInfo = boolRewardsInfo;
+	}
+};
+
+function userDictLoad() {
+
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  you_function(...);
+});
+
+function addNewUser(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo {
+	//use this to add a new user
+};
+
+function logOut() {
+	//logs the current user out. Does NOT send the user to a different page.
+};
+
+function logIn(username) {
+	//logs the user with username in. Does NOT check password validity.
+};
+
+function checkUsernamePassword(username, password) {
+	//returns 1 if the password matches the username.
+};
+
+function getCurrentUser() {
+	//returns the user object containing the current user's data
+};
