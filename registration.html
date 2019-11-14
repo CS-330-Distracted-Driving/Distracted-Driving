@@ -8,8 +8,67 @@
     	<div id="screen">
     		<!-- must have: at least five different data fields with at least 2 (? check features guidelines) different types of field (checkboxes, text fields, etc), a "submit" button, and a "back" button -->
     		<!-- Note: the "submit" button should NOT be a link. We need to use javascript to transfer people when they click the button because we may not want to transfer them in all cases. -->
-    	</div>
+    		
+    		<html>
+    		  
+        <div class = "heading">
+          <h3>Create your account!</h3>
+        </div>
+
+        <div class = "information">
+          <h5>Welcome to a safer way of driving! Please provide the information below to sign up and get              started.
+          </h5>
+        </div>
+ 
+        <table align="center" cellpadding = "10">
+          <tr>
+            <td>First Name</td>
+              <td><input type="text" name="First_Name" maxlength="30"/>
+              </td>
+          </tr>
+          <tr>
+            <td>Last Name</td>
+              <td><input type="text" name="Last_Name" maxlength="30"/>
+              </td>
+          </tr>
+          <tr>
+            <td>Email</td>
+              <td><input type="text" name="Email_Id" maxlength="100"/>
+              </td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td>
+              <input type="text" name="Mobile_Number" maxlength="10" />
+              (10 digit number)
+            </td>
+          </tr>
+          <tr>
+            <td>Username</td>
+            <td><input type="text" name="Username" maxlength="100" /></td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td><input type="text" name="Password" maxlength="100" /></td>
+          </tr>
+          <tr>
+            <td>Confirm Password</td>
+            <td><input type="text" name="Confirm_Password" maxlength="100" /></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <input type="submit" value="Sign Up">
+            </td>
+          </tr>
+          
+        </table>
+        
+      </div>
+
+</html> 
+    		
     </body>
      <script src="userdata.js"></script>
      <script src="registration.js"></script>  
 </html>
+
