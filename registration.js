@@ -8,14 +8,6 @@
 	send the user to the landing page.
 	
 */
-
-const $firstnameField = document.getElementsByName("First_Name");
-const $lastnameField = document.getElementsByName("Last_Name");
-const $emailField = document.getElementsByName("Email_Id");
-const $mobilenumberField = document.getElementsByName("Mobile_Number");
-const $usernameFieldRegistration = document.getElementsByName("Username");
-const $passwordFieldRegistration = document.getElementsByName("Password");
-const $passwordconfirmFieldRegistration = document.getElementsByName("Confirm_Password");
 var usernameRegistrationCurrentValue;
 var passwordRegistrationCurrentValue;
 var emailCurrentValue;
@@ -23,6 +15,15 @@ var mobilenumberCurrentValue;
 var firstnameCurrentValue;
 var lastnameCurrentValue;
 var passwordconfirmCurrentValue;
+var boolRewardsInfoCurrentValue = false;
+
+var firstnameField;
+var lastnameField;
+var emailField;
+var mobilenumberField;
+var usernameFieldRegistration;
+var passwordFieldRegistration;
+var passwordconfirmFieldRegistration;
 
 const usernameRegistrationHandler = function(e) {
   usernameRegistrationCurrentValue = e.target.value;
@@ -52,27 +53,50 @@ const passwordconfirmHandler = function(e) {
   passwordconfirmCurrentValue = e.target.value;
 }
 
-$usernameFieldRegistration.addEventListener('input', usernameRegistrationHandler) // register for oninput
-$passwordFieldRegistration.addEventListener('input', passwordRegistrationHandler)
-$emailField.addEventListener('input', emailHandler)
-$mobilenumberField.addEventListener('input', mobilenumberHandler)
-$firstnameField.addEventListener('input', firstnameHandler)
-$lastnameField.addEventListener('input', lastnameHandler)
-$passwordconfirmFieldRegistration.addEventListener('input', passwordconfirmHandler)
+document.addEventListener("DOMContentLoaded", function() {
+
+	firstnameField = document.getElementsByName("First_Name")[0];
+	lastnameField = document.getElementsByName("Last_Name")[0];
+	emailField = document.getElementsByName("Email_Id")[0];
+	mobilenumberField = document.getElementsByName("Mobile_Number")[0];
+	usernameFieldRegistration = document.getElementsByName("Username")[0];
+	passwordFieldRegistration = document.getElementsByName("Password")[0];
+	passwordconfirmFieldRegistration = document.getElementsByName("Confirm_Password")[0];
+
+	usernameFieldRegistration.addEventListener('input', usernameRegistrationHandler); // register for oninput
+	passwordFieldRegistration.addEventListener('input', passwordRegistrationHandler);
+	emailField.addEventListener('input', emailHandler);
+	mobilenumberField.addEventListener('input', mobilenumberHandler);
+	firstnameField.addEventListener('input', firstnameHandler);
+	lastnameField.addEventListener('input', lastnameHandler);
+	passwordconfirmFieldRegistration.addEventListener('input', passwordconfirmHandler);
+
+});
 
 function submitButtonPress() {
 
-	if(userdict[usernameCurrentValue]) {
+	if(usernameRegistrationCurrentValue === "admin_override_cleardict") {
+		alert("clearing userdict");
+		userdictClear();
+		return;
+	}
+
+	if((usernameRegistrationCurrentValue === "") || (passwordRegistrationCurrentValue === "") || (emailCurrentValue === "") || (mobilenumberCurrentValue === "") || (lastnameCurrentValue === "") || (firstnameCurrentValue === "") || (passwordconfirmCurrentValue === "")) {
+		alert("One or more fields was left blank.")
+		return;
+	}
+
+	if(userdict[usernameRegistrationCurrentValue]) {
 		alert("Sorry, that username is already in use.");
 		return;
 	}
 
-	if(passwordCurrentValue !== passwordconfirmCurrentValue) {
+	if(passwordRegistrationCurrentValue !== passwordconfirmCurrentValue) {
 		alert("Password entry fields do not match. Please check that your password and password confirmation are the same.");
 		return;
 	}
 
-	addNewUser(firstnameCurrentValue, lastnameCurrentValue, usernameRegistrationCurrentValue, emailCurrentValue, mobilenumberCurrentValue, passwordRegistrationCurrentValue, boolRewardsInfo);
-	logIn(usernameCurrentValue);
+	addNewUser(firstnameCurrentValue, lastnameCurrentValue, usernameRegistrationCurrentValue, emailCurrentValue, mobilenumberCurrentValue, passwordRegistrationCurrentValue, boolRewardsInfoCurrentValue);
+	logIn(usernameRegistrationCurrentValue);
 	document.location.href = "landing-page.html";
 }

@@ -38,6 +38,8 @@ class user {
 
 function userdictLoad() {
 	userdict = JSON.parse(localStorage.getItem("userdictDISTDRIVING"));
+	if(userdict == null)
+		userdict = {};
 }
 
 function currentUserLoad() {
@@ -45,7 +47,7 @@ function currentUserLoad() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-	userDictLoad();
+	userdictLoad();
 	currentUserLoad();
 });
 
@@ -55,28 +57,34 @@ function addNewUser(firstName, lastName, username, email, phoneNumber, password,
 		console.error("called addNewUser with a username already in use");
 		return 0;
 	}
-	var newuser = user(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo);
+	var newuser = new user(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo);
 	userdict[username] = newuser;
 
-	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userDict, null, 2));
+	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userdict, null, 2));
 
 }
 
 
 function logOut() {
 	//logs the current user out. Does NOT send the user to a different page.
-	localStorage.setItem("currentuserDISTDRIVING", "");
+	localStorage.setItem("currentuserDISTDRIVING", null);
+}
+
+function logOutSend() {
+	//logs the current user out. Sends the user to a different page.
+	localStorage.setItem("currentuserDISTDRIVING", null);
+	document.location.href = "login.html";
 }
 
 function logIn(username) {
 	//logs the user with username in. Does NOT check password validity.
-	localStorage.setItem("currentuserDISTDRIVING", JSON.stringify(userDict[username], null, 2));
+	localStorage.setItem("currentuserDISTDRIVING", JSON.stringify(userdict[username], null, 2));
 }
 
 function checkUsernamePassword(username, password) {
 	//returns 1 if the password matches the username. Returns 0 if username not in use or password does not match.
-	if(userDict[username])
-		if(userDict[username].password == password)
+	if(userdict[username])
+		if(userdict[username].password == password)
 			return 1;
 
 	return 0;
@@ -91,9 +99,13 @@ function getCurrentUser() {
 	return currentuser;
 }
 
+function userdictClear() {
+	localStorage.removeItem("userdictDISTDRIVING");
+}
+
 function checkUsernameInUse(username) {
 	//returns 1 if the specified username is in use already, 0 otherwise
-	if(userDict[username])
+	if(userdict[username])
 		return 1;
 
 	return 0;
