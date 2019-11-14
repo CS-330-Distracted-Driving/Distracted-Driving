@@ -1,3 +1,4 @@
+//File by David Dlott 11/13/2019
 /*
 This file will be included all over the place. Essentially, in a javascript file, we can refer to another javascript file's stuff
 as long as that javascript file is included in the html documents earlier. So, pretend this file is included in all the other JS
@@ -36,11 +37,11 @@ class user {
 }
 
 function userdictLoad() {
-	userdict = JSON.parse(localStorage.getItem("userdict"));
+	userdict = JSON.parse(localStorage.getItem("userdictDISTDRIVING"));
 }
 
 function currentUserLoad() {
-	currentuser = JSON.parse(localStorage.getItem("currentuser"));
+	currentuser = JSON.parse(localStorage.getItem("currentuserDISTDRIVING"));
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -57,19 +58,19 @@ function addNewUser(firstName, lastName, username, email, phoneNumber, password,
 	var newuser = user(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo);
 	userdict[username] = newuser;
 
-	localStorage.setItem("userdict", JSON.stringify(userDict, null, 2));
+	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userDict, null, 2));
 
 }
 
 
 function logOut() {
 	//logs the current user out. Does NOT send the user to a different page.
-	localStorage.setItem("currentuser", "");
+	localStorage.setItem("currentuserDISTDRIVING", "");
 }
 
 function logIn(username) {
 	//logs the user with username in. Does NOT check password validity.
-	localStorage.setItem("currentuser", JSON.stringify(userDict[username], null, 2));
+	localStorage.setItem("currentuserDISTDRIVING", JSON.stringify(userDict[username], null, 2));
 }
 
 function checkUsernamePassword(username, password) {

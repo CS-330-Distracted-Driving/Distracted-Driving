@@ -1,3 +1,4 @@
+//File by David Dlott 11/13/2019
 /*TODO:
 
 > set listeners to respond to pressing login button or to return key being pressed while password/username field is highlighted
@@ -9,3 +10,31 @@ page via a document.location.href = newUrl call.
 username + password combo not found.
 
 */
+
+//Thanks to stackoverflow user Robert Siemer for the basis for the following listener implementation/s, which made my life a good bit easier https://stackoverflow.com/questions/574941/best-way-to-track-onchange-as-you-type-in-input-type-text/26202266#26202266
+
+const $usernameField = document.getElementsByName("username");
+const $passwordField = document.getElementsByName("password");
+var usernameCurrentValue;
+var passwordCurrentValue;
+
+const usernameHandler = function(e) {
+  usernameCurrentValue = e.target.value;
+}
+
+const passwordHandler = function(e) {
+  passwordCurrentValue = e.target.value;
+}
+
+$usernameField.addEventListener('input', usernameHandler) // register for oninput
+$passwordField.addEventListener('input', passwordHandler)
+
+function loginButtonPress() {
+	if(userdict[usernameCurrentValue])
+		if(checkUsernamePassword(usernameCurrentValue, passwordCurrentValue) {
+			login(usernameCurrentValue);
+			document.location.href = "landing-page.html";
+		}
+
+	alert("The entered username or password was incorrect.")
+}
