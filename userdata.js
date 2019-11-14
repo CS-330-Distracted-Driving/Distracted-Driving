@@ -20,7 +20,8 @@ page, write everything but the username into a struct, and replace the struct th
 by way of writing the new struct to users.txt (and possibly current-user.txt?)
 */
 
-var userDict = {};
+var userdict = {};
+var currentuser;
 
 class user {
 	constructor(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo) {
@@ -32,32 +33,68 @@ class user {
 		this.password = password;
 		this.boolRewardsInfo = boolRewardsInfo;
 	}
-};
+}
 
-function userDictLoad() {
+function userdictLoad() {
+	userdict = JSON.parse(localStorage.getItem("userdict"));
+}
 
+function currentUserLoad() {
+	currentuser = JSON.parse(localStorage.getItem("currentuser"));
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  you_function(...);
+	userDictLoad();
+	currentUserLoad();
 });
 
-function addNewUser(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo {
-	//use this to add a new user
-};
+function addNewUser(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo) {
+	//use this to add a new user. Returns 0 if it fails for some reason, 1 otherwise.
+	if(userdict[username]) {
+		console.error("called addNewUser with a username already in use");
+		return 0;
+	}
+	var newuser = user(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo);
+	userdict[username] = newuser;
+
+	localStorage.setItem("userdict", JSON.stringify(userDict, null, 2));
+
+}
+
 
 function logOut() {
 	//logs the current user out. Does NOT send the user to a different page.
-};
+	localStorage.setItem("currentuser", "");
+}
 
 function logIn(username) {
 	//logs the user with username in. Does NOT check password validity.
-};
+	localStorage.setItem("currentuser", JSON.stringify(userDict[username], null, 2));
+}
 
 function checkUsernamePassword(username, password) {
-	//returns 1 if the password matches the username.
-};
+	//returns 1 if the password matches the username. Returns 0 if username not in use or password does not match.
+	if(userDict[username])
+		if(userDict[username].password == password)
+			return 1;
+
+	return 0;
+}
 
 function getCurrentUser() {
-	//returns the user object containing the current user's data
-};
+	//returns the user object containing the current user's data. Will error if there is no current user.
+	//if you call this and modify the object you get back, don't expect any changes you make to be persistent.
+	if(not(currentuser))
+		console.error("called getCurrentUser and there was no current user");
+
+	return currentuser;
+}
+
+function checkUsernameInUse(username) {
+	//returns 1 if the specified username is in use already, 0 otherwise
+	if(userDict[username])
+		return 1;
+
+	return 0;
+}
+
