@@ -8,13 +8,13 @@
 	send the user to the landing page.
 	
 */
-var usernameRegistrationCurrentValue;
-var passwordRegistrationCurrentValue;
-var emailCurrentValue;
-var mobilenumberCurrentValue;
-var firstnameCurrentValue;
-var lastnameCurrentValue;
-var passwordconfirmCurrentValue;
+var usernameRegistrationCurrentValue = "";
+var passwordRegistrationCurrentValue = "";
+var emailCurrentValue = "";
+var mobilenumberCurrentValue = "";
+var firstnameCurrentValue = "";
+var lastnameCurrentValue = "";
+var passwordconfirmCurrentValue = "";
 var boolRewardsInfoCurrentValue = false;
 
 var firstnameField;
