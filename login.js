@@ -41,6 +41,7 @@ function loginButtonPress() {
 		if(checkUsernamePassword(usernameCurrentValue, passwordCurrentValue)) {
 			logIn(usernameCurrentValue);
 			document.location.href = "landing-page.html";
+			return;
 		}
 
 	alert("The entered username or password was incorrect.");
