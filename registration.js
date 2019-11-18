@@ -12,13 +12,11 @@ var usernameRegistrationCurrentValue = "";
 var passwordRegistrationCurrentValue = "";
 var emailCurrentValue = "";
 var mobilenumberCurrentValue = "";
-var firstnameCurrentValue = "";
-var lastnameCurrentValue = "";
+var nameCurrentValue = "";
 var passwordconfirmCurrentValue = "";
 var boolRewardsInfoCurrentValue = false;
 
-var firstnameField;
-var lastnameField;
+var nameField;
 var emailField;
 var mobilenumberField;
 var usernameFieldRegistration;
@@ -41,12 +39,8 @@ const mobilenumberHandler = function(e) {
   mobilenumberCurrentValue = e.target.value;
 }
 
-const firstnameHandler = function(e) {
-  firstnameCurrentValue = e.target.value;
-}
-
-const lastnameHandler = function(e) {
-  lastnameCurrentValue = e.target.value;
+const nameHandler = function(e) {
+  nameCurrentValue = e.target.value;
 }
 
 const passwordconfirmHandler = function(e) {
@@ -55,8 +49,7 @@ const passwordconfirmHandler = function(e) {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-	firstnameField = document.getElementsByName("First_Name")[0];
-	lastnameField = document.getElementsByName("Last_Name")[0];
+	nameField = document.getElementsByName("Name")[0];
 	emailField = document.getElementsByName("Email_Id")[0];
 	mobilenumberField = document.getElementsByName("Mobile_Number")[0];
 	usernameFieldRegistration = document.getElementsByName("Username")[0];
@@ -67,8 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	passwordFieldRegistration.addEventListener('input', passwordRegistrationHandler);
 	emailField.addEventListener('input', emailHandler);
 	mobilenumberField.addEventListener('input', mobilenumberHandler);
-	firstnameField.addEventListener('input', firstnameHandler);
-	lastnameField.addEventListener('input', lastnameHandler);
+	nameField.addEventListener('input', nameHandler);
 	passwordconfirmFieldRegistration.addEventListener('input', passwordconfirmHandler);
 
 });
@@ -81,7 +73,7 @@ function submitButtonPress() {
 		return;
 	}
 
-	if((usernameRegistrationCurrentValue === "") || (passwordRegistrationCurrentValue === "") || (emailCurrentValue === "") || (mobilenumberCurrentValue === "") || (lastnameCurrentValue === "") || (firstnameCurrentValue === "") || (passwordconfirmCurrentValue === "")) {
+	if((usernameRegistrationCurrentValue === "") || (passwordRegistrationCurrentValue === "") || (emailCurrentValue === "") || (mobilenumberCurrentValue === "") || (nameCurrentValue === "") || (passwordconfirmCurrentValue === "")) {
 		alert("One or more fields was left blank.")
 		return;
 	}
@@ -96,7 +88,7 @@ function submitButtonPress() {
 		return;
 	}
 
-	addNewUser(firstnameCurrentValue, lastnameCurrentValue, usernameRegistrationCurrentValue, emailCurrentValue, mobilenumberCurrentValue, passwordRegistrationCurrentValue, boolRewardsInfoCurrentValue);
+	addNewUser(nameCurrentValue, usernameRegistrationCurrentValue, emailCurrentValue, mobilenumberCurrentValue, passwordRegistrationCurrentValue, boolRewardsInfoCurrentValue);
 	logIn(usernameRegistrationCurrentValue);
 	document.location.href = "landing-page.html";
 }
