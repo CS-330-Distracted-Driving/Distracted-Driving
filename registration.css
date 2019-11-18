@@ -42,4 +42,5 @@ td{
   display: inline-block;
   border-radius: 12px;
   margin: 0 25px;
+  cursor: pointer;
 }
