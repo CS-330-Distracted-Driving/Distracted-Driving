@@ -5,68 +5,59 @@
         <link rel="stylesheet" type="text/css" href="registration.css"/>
     </head>
     <body>
-    	<div id="screen">
+      <div id="screen">
     		<!-- must have: at least five different data fields with at least 2 (? check features guidelines) different types of field (checkboxes, text fields, etc), a "submit" button, and a "back" button -->
-    		<!-- Note: the "submit" button should NOT be a link. We need to use javascript to transfer people when they click the button because we may not want to transfer them in all cases. -->
-    		
-    		<html>
-    		  
+    		<!-- Note: the "submit" button should NOT be a link. We need to use javascript to transfer people when they click the button because we may not want to transfer them in all cases. -->  
         <div class = "heading">
-          <h3>Create your account!</h3>
+          <h1>Create your account!</h1>
         </div>
-
         <div class = "information">
-          <h5>Welcome to a safer way of driving! Please provide the information below to sign up and get              started.
-          </h5>
+          <h3>Welcome to a safer way of driving! Please provide the information below to sign up and get started.
+          </h3>
         </div>
- 
-        <table align="center" cellpadding = "10">
+        <table>
           <tr>
             <td>First Name</td>
-              <td><input type="text" name="First_Name" maxlength="30"/>
-              </td>
-          </tr>
-          <tr>
-            <td>Last Name</td>
-              <td><input type="text" name="Last_Name" maxlength="30"/>
+              <td><input type="text" placeholder="First Name" name="First_Name" maxlength="30"/>
               </td>
           </tr>
           <tr>
             <td>Email</td>
-              <td><input type="text" name="Email_Id" maxlength="100"/>
+              <td><input type="email" placeholder="Email" name="Email_Id" maxlength="100"/>
               </td>
           </tr>
           <tr>
             <td>Phone Number</td>
-            <td>
-              <input type="text" name="Mobile_Number" maxlength="10" />
-              (10 digit number)
-            </td>
+              <td><input type="tel" placeholder="(___) ___-____" name="Mobile_Number" maxlength="10" />
+              </td>
           </tr>
           <tr>
             <td>Username</td>
-            <td><input type="text" name="Username" maxlength="100" /></td>
+              <td><input type="text" placeholder="Username" name="Username" maxlength="100" />
+			  </td>
           </tr>
           <tr>
             <td>Password</td>
-            <td><input type="text" name="Password" maxlength="100" /></td>
+              <td><input type="password" placeholder="Password" name="Password" maxlength="100" />
+			  </td>
           </tr>
           <tr>
             <td>Confirm Password</td>
-            <td><input type="text" name="Confirm_Password" maxlength="100" /></td>
+              <td><input type="password" placeholder="Confirm Password" name="Confirm_Password" maxlength="100" />
+			  </td>
           </tr>
-          <tr>
-            <td colspan="2" align="center">
-              <input type="submit" onclick="submitButtonPress()" value="Sign Up">
+		  <tr>
+			<td>Send email notifications</td>
+		    <td><input type="checkbox" checked="checked" name="Email_Consent">
+			</td>
+          </tr>
+		  <tr>
+		    <td></td>
+            <td><input type="submit" class="submit_button" onclick="submitButtonPress()" value="Sign Up!">
             </td>
           </tr>
-          
-        </table>
-        
-      </div>
-
-</html> 
-    		
+        </table> 
+      </div>		
     </body>
      <script src="userdata.js"></script>
      <script src="registration.js"></script>  

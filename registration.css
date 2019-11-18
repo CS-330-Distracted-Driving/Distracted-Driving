@@ -1,41 +1,45 @@
-.heading{
-  font-family: Calibri; 
-  font-size: 16pt;         
-  font-style: normal; 
-  font-weight: bold; 
-  color: White;
-  text-align: center; 
-  position: relative;
-  top: 30px;
-}
-
-.information{
-  font-family: Calibri; 
-  font-size: 16pt;         
-  font-style: normal; 
-  font-weight: bold; 
-  color: White;
-  text-align: center; 
-  position: relative;
-  top: 40px;
-}
-
 #screen{
   background-color: CornflowerBlue;
 }
 
-table{
-  font-family: Calibri; 
-  color: White; 
-  font-size: 11pt; 
-  font-style: normal;
-  font-weight: bold;
-  text-align:; 
-  background-color: CornflowerBlue; 
-  border-collapse: collapse; 
+.heading{         
+  font-size: 110%;
+  font-weight: bold; 
+  color: white;
+  text-align: center; 
   position: relative;
-  top: 40px;
+  top: 20px;
 }
-table.inner{
-  border: 0px
+
+.information{
+  font-size: 70%;
+  font-weight: bold; 
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 5px;
+  padding: 0px 2px;
+}
+
+table{
+  color: white; 
+  font-weight: bold;
+  border-collapse: collapse; 
+}
+
+td{
+  padding: 8px 12px;
+}
+
+.submit_button{
+  background-color: white;
+  border: none;
+  color: CornflowerBlue;
+  padding: 15px 25px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  margin: 0 25px;
 }
