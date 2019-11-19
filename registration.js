@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+
 function submitButtonPress() {
 
 	if(usernameRegistrationCurrentValue === "admin_override_cleardict") {
@@ -77,6 +78,21 @@ function submitButtonPress() {
 		alert("One or more fields was left blank.")
 		return;
 	}
+
+	var atposition=emailCurrentValue.indexOf("@");  
+	var dotposition=emailCurrentValue.lastIndexOf(".");  
+	if (atposition<1 || dotposition<atposition+2 || dotposition+2>=emailCurrentValue.length){  
+		alert("Please enter a valid email address.");  
+		return;  
+	} 
+	
+	var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+	if(mobilenumberCurrentValue.match(phoneno)){
+    }
+    else{
+		alert("Please enter a valid phone number, XXX-XXX-XXXX");
+        return;
+    }
 
 	if(userdict[usernameRegistrationCurrentValue]) {
 		alert("Sorry, that username is already in use.");
