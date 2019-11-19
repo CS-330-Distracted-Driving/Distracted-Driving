@@ -6,30 +6,37 @@
     </head>
     <body>
     	<div id="screen">
+			<img id="cars" src="images\cars.jpg" alt="car graphic">
+			<div class = "appTitle">
+				<h1> alert!</h1>
+			</div>
             <div class = "container">
-                <div class = "EnterUsername">
-                    <label for = "username"> <b> Username: </b> </label>
-                    <input type = "text" placeholder="Enter Username" name = "username" required>
-                </div>
-                <div class = "EnterPassword">
-                    <label for = "password"> <b> Password:  </b> </label>
-                    <input type = "password" placeholder = "Enter Password" name = "password" required>
-                </div> 
-                <a href = "registration.html"> <button = class ="register-button"> Register </button> </a> 
-        </div>
-        <div class = "login">
-            <button class = "login-button" onclick="loginButtonPress()"> Login </button>
-        </div>
-        <div class = "appTitle">
-            <h1> Alert! </h1>
-        </div>
-        <div class= "appInfo">
-            <b> Alert is a driving app that rewards you for being safe! The further you drive without opening your phone, the more points you earn; the more points you earn, the more rewards you get! </b>
-        </div>
-        </div>
+				<table>
+				  <tr>
+					<td>Username:</td>
+					<td><input type="text" placeholder="Enter Username" name="username"required>
+					</td>
+				  </tr>
+				  <tr>
+					<td>Password:</td>
+					<td><input type="password" placeholder="Enter Password" name="password" required>
+					</td>
+				  </tr>
+				</table>
+			</div>
+			<div class = "login">
+				<button class = "login-button" onclick="loginButtonPress()"> Login </button>
+			</div>
+			<div class= "appInfo">
+				<b> The further you drive without opening your phone, the more points you earn;
+				<br><br> the more points you earn, the more rewards you get! </b>
+			</div>
+			<div class = "register">
+				<a href = "registration.html"> <button class ="register-button"> Register </button> </a> 
+			</div>
+		</div>
             <!--must have: login button, username field, password field, register new account button-->
     		<!-- note that the login button should not be a link: see login.js for why -->
-    	</div>
     </body>
      <script src="userdata.js"></script>
      <script src="login.js"></script>  
