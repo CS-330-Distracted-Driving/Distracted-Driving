@@ -2,13 +2,22 @@
   background-color: CornflowerBlue;
 }
 
+.back-button {
+  color: white;
+  font-size: 200%;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 0px 10px;
+}
+
 .heading{         
   font-size: 110%;
   font-weight: bold; 
   color: white;
   text-align: center; 
   position: relative;
-  top: 20px;
+  margin: -45px 0px;
 }
 
 .information{
@@ -17,7 +26,7 @@
   color: white;
   text-align: center;
   position: relative;
-  top: 5px;
+  margin: 55px 0px 0px 0px;
   padding: 0px 2px;
 }
 
