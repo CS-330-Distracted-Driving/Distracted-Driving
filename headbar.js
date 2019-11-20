@@ -11,11 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	headbar = document.getElementsByClassName("head-bar")[0];
 	headbarNameField = headbar.getElementsByClassName("name")[0];
 	headbarUsernameField = headbar.getElementsByClassName("username")[0];
-	headbarProgressLabelField = headbar.getElementsByClassName("sr-only")[0];
-	headbarProgressBarField = headbar.getElementsByClassName("progress-bar")[0];	
+	//headbarProgressLabelField = headbar.getElementsByClassName("sr-only")[0];
+	headbarProgressBarField = headbar.getElementsByClassName("progressbarProgress")[0];	
 
-	headbarNameField.innerHTML = "Welcome, " + headbarCurrentUser.Name;
+	headbarNameField.innerHTML = "Welcome, " + headbarCurrentUser.name;
 	headbarUsernameField.innerHTML = headbarCurrentUser.username;
-	headbarProgressBarField.setAttribute("aria-valuenow", headbarCurrentUser.nextRewardProgress);
-	headbarProgressLabelField.innerHTML = headbarCurrentUser.nextRewardProgress.toString() + "% Complete";
+	headbarProgressBarField.style.width = headbarCurrentUser.nextRewardProgress.toString() + "%";
 });

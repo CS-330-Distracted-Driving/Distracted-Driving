@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	usernameField = document.getElementsByName("Username")[0];
 	rewardsEmailsField = document.getElementsByName("Rewards_Emails")[0];
 
-	nameField.innerHTML = "Name: " + currentuser.Name;
+	nameField.innerHTML = "Name: " + currentuser.name;
 	emailField.innerHTML = "Email: " + currentuser.email;
 	mobilenumberField.innerHTML = "Phone Number: " + currentuser.phoneNumber;
 	usernameField.innerHTML = "Username: " + currentuser.username;
 	rewardsEmailsField.checked = currentuser.boolRewardsInfo;
 
-	rewardsEmailField.addEventListener('change', rewardsEmailHandler);
+	rewardsEmailsField.addEventListener('change', rewardsEmailHandler);
 });
 
 const rewardsEmailHandler = function(e) { //obstinate and hacky way of preventing users from changing the checkbox's value

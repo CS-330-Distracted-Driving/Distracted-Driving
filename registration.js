@@ -117,14 +117,6 @@ function submitButtonPress() {
 	}
 
 	addNewUser(nameCurrentValue, usernameRegistrationCurrentValue, emailCurrentValue, mobilenumberCurrentValue, passwordRegistrationCurrentValue, boolRewardsInfoCurrentValue);
-	console.log(nameCurrentValue);
-	console.log(usernameRegistrationCurrentValue);
-	console.log(emailCurrentValue);
-	console.log(mobilenumberCurrentValue);
-	console.log(passwordRegistrationCurrentValue);
-	console.log(passwordconfirmCurrentValue);
-	console.log(boolRewardsInfoCurrentValue);
-	wait(10000);
 	if(logIn(usernameRegistrationCurrentValue) == 1) {
 		document.location.href = "menu.html";
 	}

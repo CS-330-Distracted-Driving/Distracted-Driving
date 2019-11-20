@@ -34,9 +34,10 @@
 	background-color: white;
 }
 
-#progressbar>div{
+.progressbarProgress{
   background-color: cornflowerblue;
   width: 40%;
   /* Adjust with JavaScript */
   height: 15px;
+  color: black;
 }

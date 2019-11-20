@@ -25,9 +25,8 @@ var userdict = {};
 var currentuser;
 
 class user {
-	constructor(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+	constructor(name, username, email, phoneNumber, password, boolRewardsInfo) {
+		this.name = name;
 		this.username = username;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
@@ -53,13 +52,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	currentUserLoad();
 });
 
-function addNewUser(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo) {
+function addNewUser(name, username, email, phoneNumber, password, boolRewardsInfo) {
 	//use this to add a new user. Returns 0 if it fails for some reason, 1 otherwise.
 	if(userdict[username]) {
 		console.error("called addNewUser with a username already in use");
 		return 0;
 	}
-	var newuser = new user(firstName, lastName, username, email, phoneNumber, password, boolRewardsInfo);
+	var newuser = new user(name, username, email, phoneNumber, password, boolRewardsInfo);
 	userdict[username] = newuser;
 
 	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userdict, null, 2));
