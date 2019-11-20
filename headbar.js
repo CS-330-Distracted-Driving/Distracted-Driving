@@ -16,5 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	headbarNameField.innerHTML = "Welcome, " + headbarCurrentUser.name;
 	headbarUsernameField.innerHTML = headbarCurrentUser.username;
+	headbarProgressBarField.innerHTML = headbarCurrentUser.nextRewardProgress.toString() + "%";
 	headbarProgressBarField.style.width = headbarCurrentUser.nextRewardProgress.toString() + "%";
 });

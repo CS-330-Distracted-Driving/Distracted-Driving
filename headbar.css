@@ -1,8 +1,8 @@
 .head-bar { 
 	color: cornflowerblue;
 	text-align: center;
-	height: 75px;
-	line-height: 75px;
+	height: 85px;
+	line-height: 85px;
 	background-color: white;
 }
 
@@ -26,7 +26,7 @@
 
 #progressbar {
 	position: relative;
-	bottom: 120px;
+	bottom: 135px;
     height: 15px;
     width: 250px;
 	left: 25px;
@@ -37,7 +37,10 @@
 .progressbarProgress{
   background-color: cornflowerblue;
   width: 40%;
-  /* Adjust with JavaScript */
   height: 15px;
   color: black;
+  text-align: center;
+  line-height: 15px;
+  font-weight: bold;
+  color: white;
 }
