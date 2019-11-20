@@ -5,11 +5,62 @@
         <link rel="stylesheet" type="text/css" href="registration.css"/>
     </head>
     <body>
-    	<div id="screen">
+      <div id="screen">
     		<!-- must have: at least five different data fields with at least 2 (? check features guidelines) different types of field (checkboxes, text fields, etc), a "submit" button, and a "back" button -->
-    		<!-- Note: the "submit" button should NOT be a link. We need to use javascript to transfer people when they click the button because we may not want to transfer them in all cases. -->
-    	</div>
+    		<!-- Note: the "submit" button should NOT be a link. We need to use javascript to transfer people when they click the button because we may not want to transfer them in all cases. -->  
+		<a href="login.html" class="back-button"> &#8678 </a>
+		<div class = "heading">
+          <h1>Create your account!</h1>
+        </div>
+        <div class = "information">
+          <h3>Welcome to a safer way of driving! Please provide the information below to sign up and get started.
+          </h3>
+        </div>
+        <table>
+          <tr>
+            <td>Name</td>
+              <td><input type="text" placeholder="Name" name="Name" maxlength="30"/>
+              </td>
+          </tr>
+          <tr>
+            <td>Email</td>
+              <td><input type="email" placeholder="Email" name="Email_Id" maxlength="100">
+              </td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+              <td><input type="tel" placeholder="123-456-7890" name="Mobile_Number" maxlength="12" />
+              </td>
+          </tr>
+          <tr>
+            <td>Username</td>
+              <td><input type="text" placeholder="Username" name="Username" maxlength="100" />
+			  </td>
+          </tr>
+          <tr>
+            <td>Password</td>
+              <td><input type="password" placeholder="Password" name="Password" maxlength="100" />
+			  </td>
+          </tr>
+          <tr>
+            <td>Confirm Password</td>
+              <td><input type="password" placeholder="Confirm Password" name="Confirm_Password" maxlength="100" />
+			  </td>
+          </tr>
+		  <tr>
+			<td>Send email notifications</td>
+		    <td><input type="checkbox" class="check" checked="checked" name="Email_Consent"> 
+			</td>
+          </tr>
+		  <tr>
+		    <td></td>
+            <td><input type="submit" class="submit_button" onclick="submitButtonPress()" value="Sign Up!">
+            </td>
+          </tr>
+        </table> 
+      </div>		
     </body>
      <script src="userdata.js"></script>
      <script src="registration.js"></script>  
 </html>
+
