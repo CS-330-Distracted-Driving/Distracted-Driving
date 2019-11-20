@@ -31,7 +31,7 @@ td {
 	text-align: center;
 }
 
-.login-button {
+button {
 	font-size: 20;
 	background-color: white;
 	border: none;
@@ -55,20 +55,6 @@ td {
 	position: relative;
 	text-align: center;
 }
-
-.register-button{
-	font-size: 20;
-	background-color: white;
-	border: none;
-	color: CornflowerBlue;
-	padding: 15px 25px;
-	text-align: center;
-	font-weight: bold;
-	text-decoration: none;
-	display: inline-block;
-	border-radius: 12px;
-	cursor: pointer;
-}	
 
 
 	

@@ -118,5 +118,5 @@ function submitButtonPress() {
 
 	addNewUser(nameCurrentValue, usernameRegistrationCurrentValue, emailCurrentValue, mobilenumberCurrentValue, passwordRegistrationCurrentValue, boolRewardsInfoCurrentValue);
 	logIn(usernameRegistrationCurrentValue);
-	document.location.href = "landing-page.html";
+	document.location.href = "menu.html";
 }

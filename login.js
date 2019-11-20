@@ -40,7 +40,7 @@ function loginButtonPress() {
 	if(userdict[usernameCurrentValue])
 		if(checkUsernamePassword(usernameCurrentValue, passwordCurrentValue)) {
 			logIn(usernameCurrentValue);
-			document.location.href = "landing-page.html";
+			document.location.href = "menu.html";
 			return;
 		}
 

@@ -1,0 +1,38 @@
+.profileTextElement{
+	margin: 10px;
+	float: left;
+	text-overflow: ellipsis;
+	max-height: 1em;
+	width: 280px;
+}
+
+.profileCheckbox{
+	margin: 10px;
+	float: left;
+	width: 280px;
+}
+
+.profileCheckbox p {
+	width: 160px;
+	display: inline-block;
+}
+
+
+.check{
+	display: inline-block;
+    margin: 0px;
+}
+
+.backButton{
+  background-color: white;
+  border: none;
+  color: CornflowerBlue;
+  padding: 15px 25px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  margin: 0 25px;
+  cursor: pointer;
+}
