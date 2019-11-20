@@ -1,3 +1,4 @@
+
 .profileTextElement{
 	margin: 10px;
 	float: left;
@@ -35,4 +36,17 @@
   border-radius: 12px;
   margin: 0 25px;
   cursor: pointer;
+}
+
+#screen{
+  background-color: CornflowerBlue;
+}
+
+.back-button {
+  color: white;
+  font-size: 200%;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 0px 10px;
 }
