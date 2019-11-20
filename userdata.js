@@ -44,6 +44,7 @@ function userdictLoad() {
 }
 
 function currentUserLoad() {
+	console.log(localStorage.getItem("currentuserDISTDRIVING"));
 	currentuser = JSON.parse(localStorage.getItem("currentuserDISTDRIVING"));
 }
 
@@ -63,23 +64,25 @@ function addNewUser(firstName, lastName, username, email, phoneNumber, password,
 
 	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userdict, null, 2));
 
+	return 1;
 }
 
 
 function logOut() {
 	//logs the current user out. Does NOT send the user to a different page.
-	localStorage.setItem("currentuserDISTDRIVING", null);
+	localStorage.removeItem("currentuserDISTDRIVING");
 }
 
 function logOutSend() {
 	//logs the current user out. Sends the user to a different page.
-	localStorage.setItem("currentuserDISTDRIVING", null);
+	localStorage.removeItem("currentuserDISTDRIVING");
 	document.location.href = "login.html";
 }
 
 function logIn(username) {
 	//logs the user with username in. Does NOT check password validity.
 	localStorage.setItem("currentuserDISTDRIVING", JSON.stringify(userdict[username], null, 2));
+	return 1;
 }
 
 function checkUsernamePassword(username, password) {
@@ -94,7 +97,7 @@ function checkUsernamePassword(username, password) {
 function getCurrentUser() {
 	//returns the user object containing the current user's data. Will error if there is no current user.
 	//if you call this and modify the object you get back, don't expect any changes you make to be persistent.
-	if(not(currentuser))
+	if(currentuser == null)
 		console.error("called getCurrentUser and there was no current user");
 
 	return currentuser;
@@ -102,6 +105,7 @@ function getCurrentUser() {
 
 function userdictClear() {
 	localStorage.removeItem("userdictDISTDRIVING");
+	localStorage.removeItem("currentuserDISTDRIVING");
 }
 
 function checkUsernameInUse(username) {

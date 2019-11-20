@@ -1,3 +1,9 @@
+var nameField;
+var emailField;
+var mobilenumberField;
+var usernameField;
+var rewardsEmailsField;
+
 document.addEventListener("DOMContentLoaded", function() {
 
 	nameField = document.getElementsByName("Name")[0];
