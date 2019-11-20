@@ -14,7 +14,7 @@ var emailCurrentValue = "";
 var mobilenumberCurrentValue = "";
 var nameCurrentValue = "";
 var passwordconfirmCurrentValue = "";
-var boolRewardsInfoCurrentValue = false;
+var boolRewardsInfoCurrentValue = true;
 
 var nameField;
 var emailField;
@@ -22,6 +22,7 @@ var mobilenumberField;
 var usernameFieldRegistration;
 var passwordFieldRegistration;
 var passwordconfirmFieldRegistration;
+var rewardsEmailField;
 
 const usernameRegistrationHandler = function(e) {
   usernameRegistrationCurrentValue = e.target.value;
@@ -47,6 +48,15 @@ const passwordconfirmHandler = function(e) {
   passwordconfirmCurrentValue = e.target.value;
 }
 
+const rewardsEmailHandler = function(e) {
+	if(rewardsEmailField.checked) {
+		boolRewardsInfoCurrentValue = true;
+	}
+	else {
+		boolRewardsInfoCurrentValue = false;
+	}
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
 	nameField = document.getElementsByName("Name")[0];
@@ -55,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	usernameFieldRegistration = document.getElementsByName("Username")[0];
 	passwordFieldRegistration = document.getElementsByName("Password")[0];
 	passwordconfirmFieldRegistration = document.getElementsByName("Confirm_Password")[0];
+	rewardsEmailField = document.getElementsByName("Email_Consent")[0];
 
 	usernameFieldRegistration.addEventListener('input', usernameRegistrationHandler); // register for oninput
 	passwordFieldRegistration.addEventListener('input', passwordRegistrationHandler);
@@ -62,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	mobilenumberField.addEventListener('input', mobilenumberHandler);
 	nameField.addEventListener('input', nameHandler);
 	passwordconfirmFieldRegistration.addEventListener('input', passwordconfirmHandler);
+	rewardsEmailField.addEventListener('change', rewardsEmailHandler);
 
 });
 
