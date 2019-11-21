@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	usernameField = document.getElementsByName("Username")[0];
 	rewardsEmailsField = document.getElementsByName("Rewards_Emails")[0];
 
-	nameField.innerHTML = "Name: " + currentuser.name;
-	emailField.innerHTML = "Email: " + currentuser.email;
-	mobilenumberField.innerHTML = "Phone Number: " + currentuser.phoneNumber;
-	usernameField.innerHTML = "Username: " + currentuser.username;
+	nameField.innerHTML = currentuser.name;
+	emailField.innerHTML = currentuser.email;
+	mobilenumberField.innerHTML = currentuser.phoneNumber;
+	usernameField.innerHTML = currentuser.username;
 	rewardsEmailsField.checked = currentuser.boolRewardsInfo;
 
 	rewardsEmailsField.addEventListener('change', rewardsEmailHandler);
