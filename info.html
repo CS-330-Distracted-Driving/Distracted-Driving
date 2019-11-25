@@ -2,7 +2,7 @@
     <head>
         <title>Settings Page</title>        
         <link rel="stylesheet" type="text/css" href="app-wide css.css"/>        
-        <link rel="stylesheet" type="text/css" href="settings.css"/>
+        <link rel="stylesheet" type="text/css" href="info.css"/>
 		<link rel="stylesheet" type="text/css" href="headbar.css"/>
     </head>
     <body>
@@ -16,9 +16,20 @@
 				</div>
             </div>
 			<a href="menu.html" class="back-button"> &#8678 </a>
+			<div class="information">
+				<h1>Welcome to alert!</h1> 
+				1. Lock your phone using the lock button before you start driving. <br><br>
+				2. The app will keep track of the amount of time your phone is locked while your car is in motion. <br><br>
+				3. For every second of driving, your progress bar <br> <br> <br>
+				will increase 1% (for testing purposes). <br> <br>
+				4. When your progress reaches 100%, you will level up toward new badges!
+			</div>
+			<div id="progressbar" class="progressinfo">
+				<div class="progressbarInfo">50% &#8594 </div>
+			</div>
     	</div>
     </body>
      <script src="userdata.js"></script>
      <script src="headbar.js"></script>
-     <script src="settings.js"></script>
+     <script src="info.js"></script>
 </html>
