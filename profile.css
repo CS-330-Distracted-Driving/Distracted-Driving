@@ -2,25 +2,6 @@
   background-color: CornflowerBlue;
 }
 
-/* .profileTextElement{
-	margin: 10px;
-	float: left;
-	text-overflow: ellipsis;
-	max-height: 1em;
-	width: 280px;
-} */
-
-/* .profileCheckbox{
-	margin: 10px;
-	float: left;
-	width: 280px;
-}
-
-.profileCheckbox p {
-	width: 160px;
-	display: inline-block;
-} */
-
 .back-button {
   color: white;
   font-size: 200%;
