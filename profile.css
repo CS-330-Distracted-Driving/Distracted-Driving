@@ -11,17 +11,21 @@
   padding: 0px 10px;
 }
 
+.profile_info{
+  overflow-x: auto;	
+}
+
 table{
   color: white; 
   font-weight: bold;
   font-size: 125%;
   border-collapse: collapse;
-  margin: 10px;  
+  margin: 10px; 
 }
 
 td{
   padding: 15px 8px;
-  width: 50%
+  width: 50%;
 }
 
 .check{

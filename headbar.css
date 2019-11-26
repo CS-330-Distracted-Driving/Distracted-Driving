@@ -27,11 +27,12 @@
 #progressbar {
 	position: relative;
 	bottom: 135px;
-    height: 15px;
     width: 250px;
+	height: 15px;
 	left: 25px;
 	border: solid;
 	background-color: white;
+	line-height: 0px;
 }
 
 .progressbarProgress{
@@ -43,4 +44,9 @@
   line-height: 15px;
   font-weight: bold;
   color: white;
+}
+
+#low-percent{
+  position: relative;
+  top: 8px;
 }

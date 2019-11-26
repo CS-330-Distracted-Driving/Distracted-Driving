@@ -7,17 +7,18 @@
     </head>
     <body>
       <div id="screen">
-		<!--Username and progress bar-->
 		<div class="head-bar">
-				<!--Username and progress bar-->
-				<div class = "name"> Welcome, Name </div>
-				<div class = "username"> Username </div>
-				<div id="progressbar">
-					<div class="progressbarProgress"></div>
-				</div>
-		</div>
+			<!--Username and progress bar-->
+			<div class = "name">Welcome, Name</div>
+			<div class = "username">Username</div>
+			<div id="progressbar">
+				<div id="low-percent">percent</div>
+				<div class="progressbarProgress">percent</div> 
+			</div>
+        </div>
 		<a href="menu.html" class="back-button"> &#8678 </a>	
-        <table>
+        <div class="profile_info">
+		  <table>
 			<tr class="profileTextElement">
 				<td> Name: </td>
 				<td name="Name"> </td>
@@ -38,7 +39,8 @@
 				<td>Receive rewards emails: </td>
 				<td><input type="checkbox" name="Rewards_Emails" class="check" onclick="return false;"></td>
 			</tr>
-		</table>
+		  </table>
+		</div>
 	  </div>	
     </body>
      <script src="userdata.js"></script>
