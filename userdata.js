@@ -32,7 +32,8 @@ class user {
 		this.phoneNumber = phoneNumber;
 		this.password = password;
 		this.boolRewardsInfo = boolRewardsInfo;
-		this.nextRewardProgress = Math.floor(Math.random() * 100); //change this in future versions lol...
+		this.nextRewardProgress = 0; //change this in future versions lol...
+		this.rewardLevel = 0;
 	}
 }
 
