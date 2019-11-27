@@ -69,12 +69,20 @@ function addNewUser(name, username, email, phoneNumber, password, boolRewardsInf
 
 
 function logOut() {
-	//logs the current user out. Does NOT send the user to a different page.
+	//logs the current user out. Does NOT send the user to a different page. Saves changes to user's progress.
+	userdict[currentuser.username].nextRewardProgress = toNextReward;
+	userdict[currentuser.username].rewardLevel = newRewardLevel;
+
+	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userdict, null, 2));
 	localStorage.removeItem("currentuserDISTDRIVING");
 }
 
 function logOutSend() {
-	//logs the current user out. Sends the user to a different page.
+	//logs the current user out. Sends the user to a different page. Saves changes to user's progress.
+	userdict[currentuser.username].nextRewardProgress = toNextReward;
+	userdict[currentuser.username].rewardLevel = newRewardLevel;
+
+	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userdict, null, 2));
 	localStorage.removeItem("currentuserDISTDRIVING");
 	document.location.href = "login.html";
 }
@@ -116,3 +124,18 @@ function checkUsernameInUse(username) {
 	return 0;
 }
 
+function currentUserProgressModify(toNextReward, newRewardLevel) {
+	//modifies the current user's rewards properties to equal the inputs. IS PERSISTENT. Returns 0 if inputs are bad, but assumes inputs are nonnegative and won't catch it if they are negative.
+	if(toNextReward > 100)
+		return 0;
+	if(newRewardLevel > 6)
+		return 0;
+
+	currentuser.nextRewardProgress = toNextReward;
+	currentuser.rewardLevel = newRewardLevel;
+
+	localStorage.setItem("currentuserDISTDRIVING", JSON.stringify(currentuser, null, 2));
+
+
+	return 1;
+}

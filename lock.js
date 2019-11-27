@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	rewardsProgress = currentuser.nextRewardProgress;
 	rewardsLevel = currentuser.rewardLevel;
 
-	setInterval(incrementRewards(), 1000);
+	setInterval(function() {incrementRewards()}, 1000);
 
 });
 
@@ -21,9 +21,11 @@ function incrementRewards() {
 			rewardsProgress = 100;
 		}
 	}
+	else {
+		rewardsProgress = rewardsProgress + 1;
+	}
 
-	currentuser.nextRewardProgress = rewardsProgress;
-	currentuser.rewardLevel = rewardsLevel;
+	currentUserProgressModify(rewardsProgress, rewardsLevel);
 
 	return 1;
 }
