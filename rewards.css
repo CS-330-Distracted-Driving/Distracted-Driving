@@ -2,6 +2,29 @@
   background-color: cornflowerblue;
 }
 
+.container{
+	position: relative;
+	text-align: center;
+	margin: 29px 10px;
+	position: relative;
+	bottom: 30px;
+	border: 1px solid black;
+}
+
+button {
+	font-size: 20;
+	background-color: white;
+	border: none;
+	color: CornflowerBlue;
+	padding: 15px 25px;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 12px;
+	cursor: pointer;
+}
+
 .back-button {
   color: white;
   font-size: 200%;
