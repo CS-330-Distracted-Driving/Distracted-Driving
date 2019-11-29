@@ -70,8 +70,8 @@ function addNewUser(name, username, email, phoneNumber, password, boolRewardsInf
 
 function logOut() {
 	//logs the current user out. Does NOT send the user to a different page. Saves changes to user's progress.
-	userdict[currentuser.username].nextRewardProgress = toNextReward;
-	userdict[currentuser.username].rewardLevel = newRewardLevel;
+	userdict[currentuser.username].nextRewardProgress = currentuser.nextRewardProgress;
+	userdict[currentuser.username].rewardLevel = currentuser.rewardLevel;
 
 	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userdict, null, 2));
 	localStorage.removeItem("currentuserDISTDRIVING");
@@ -79,8 +79,8 @@ function logOut() {
 
 function logOutSend() {
 	//logs the current user out. Sends the user to a different page. Saves changes to user's progress.
-	userdict[currentuser.username].nextRewardProgress = toNextReward;
-	userdict[currentuser.username].rewardLevel = newRewardLevel;
+	userdict[currentuser.username].nextRewardProgress = currentuser.nextRewardProgress;
+	userdict[currentuser.username].rewardLevel = currentuser.rewardLevel;
 
 	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userdict, null, 2));
 	localStorage.removeItem("currentuserDISTDRIVING");
