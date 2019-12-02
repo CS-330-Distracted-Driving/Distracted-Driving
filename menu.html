@@ -1,32 +1,42 @@
 <html>
     <head>
-        <title>Menu Page</title>        
-        <link rel="stylesheet" type="text/css" href="app-wide css.css"/>        
+        <title>Main Menu</title>
+        <link rel="stylesheet" type="text/css" href="app-wide css.css"/>
+        <link rel="stylesheet" type="text/css" href="headbar.css"/>
         <link rel="stylesheet" type="text/css" href="menu.css"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
     </head>
     <body>
     	<div id="screen">
 		    <div class="head-bar">
 				<!--Username and progress bar-->
+				<div class = "name">Welcome, Name</div>
+				<div class = "username">Username</div>
+				<div id="progressbar">
+					<div id="low-percent">percent</div>
+					<div class="progressbarProgress">percent</div> 
+				</div>
             </div> 
 			<div class="container">
-				<button onclick="" class = "lock-button"> Lock </button>
+				<a href="lock.html"><button> Lock <i class="material-icons"> lock </i></button> </a>
 			</div>
 			<div class="container">
-				<button onclick="" class = "rewards-button"> Rewards </button>
+				<a href="rewards.html"> <button> Rewards <i class="material-icons"> emoji_events </i></button> </a>
 			</div>
 			<div class="container">
-				<button onclick="" class = "profile-button"> Profile </button>
+				<a href="profile.html"><button> Profile <i class="material-icons"> account_circle </i></button> </a>
 			</div>
 			<div class="container">
-				<button onclick="" class = "settings-button"> Settings </button>
+				<a href="info.html"> <button> Info <i class="material-icons"> info </i></button> </a>
 			</div>
 			<div class="container">
-				<button onclick="logOutSend()" class = "back-button"> Log out? </button>
+				<button onclick="logOutSend()" class = "back-button"> Log out? <i class="material-icons"> arrow_back </i></button>
 			<div>
     	</div>
     </body>
      <script src="userdata.js"></script>
-     <script src="landing-page.js"></script>  
+     <script src="headbar.js"></script>
+     <script src="menu.js"></script>
 </html>
 

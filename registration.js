@@ -117,6 +117,10 @@ function submitButtonPress() {
 	}
 
 	addNewUser(nameCurrentValue, usernameRegistrationCurrentValue, emailCurrentValue, mobilenumberCurrentValue, passwordRegistrationCurrentValue, boolRewardsInfoCurrentValue);
-	logIn(usernameRegistrationCurrentValue);
-	document.location.href = "menu.html";
+	if(logIn(usernameRegistrationCurrentValue) == 1) {
+		document.location.href = "menu.html";
+	}
+	else {
+		console.error("Somehow failed to log in user?")
+	}
 }

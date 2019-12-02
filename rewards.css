@@ -1,11 +1,14 @@
 #screen{
-	background-color: cornflowerblue;
+  background-color: cornflowerblue;
 }
 
 .container{
 	position: relative;
 	text-align: center;
-	margin: 25px 10px;
+	margin: 29px 10px;
+	position: relative;
+	bottom: 30px;
+	border: 1px solid black;
 }
 
 button {
@@ -22,4 +25,11 @@ button {
 	cursor: pointer;
 }
 
-
+.back-button {
+  color: white;
+  font-size: 200%;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 0px 10px;
+}

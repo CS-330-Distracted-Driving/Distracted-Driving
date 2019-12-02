@@ -25,13 +25,15 @@ var userdict = {};
 var currentuser;
 
 class user {
-	constructor(Name, username, email, phoneNumber, password, boolRewardsInfo) {
-		this.Name = Name;
+	constructor(name, username, email, phoneNumber, password, boolRewardsInfo) {
+		this.name = name;
 		this.username = username;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.password = password;
 		this.boolRewardsInfo = boolRewardsInfo;
+		this.nextRewardProgress = 0; //change this in future versions lol...
+		this.rewardLevel = 0;
 	}
 }
 
@@ -42,6 +44,7 @@ function userdictLoad() {
 }
 
 function currentUserLoad() {
+	console.log(localStorage.getItem("currentuserDISTDRIVING"));
 	currentuser = JSON.parse(localStorage.getItem("currentuserDISTDRIVING"));
 }
 
@@ -50,34 +53,44 @@ document.addEventListener("DOMContentLoaded", function() {
 	currentUserLoad();
 });
 
-function addNewUser(Name, username, email, phoneNumber, password, boolRewardsInfo) {
+function addNewUser(name, username, email, phoneNumber, password, boolRewardsInfo) {
 	//use this to add a new user. Returns 0 if it fails for some reason, 1 otherwise.
 	if(userdict[username]) {
 		console.error("called addNewUser with a username already in use");
 		return 0;
 	}
-	var newuser = new user(Name, username, email, phoneNumber, password, boolRewardsInfo);
+	var newuser = new user(name, username, email, phoneNumber, password, boolRewardsInfo);
 	userdict[username] = newuser;
 
 	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userdict, null, 2));
 
+	return 1;
 }
 
 
 function logOut() {
-	//logs the current user out. Does NOT send the user to a different page.
-	localStorage.setItem("currentuserDISTDRIVING", null);
+	//logs the current user out. Does NOT send the user to a different page. Saves changes to user's progress.
+	userdict[currentuser.username].nextRewardProgress = currentuser.nextRewardProgress;
+	userdict[currentuser.username].rewardLevel = currentuser.rewardLevel;
+
+	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userdict, null, 2));
+	localStorage.removeItem("currentuserDISTDRIVING");
 }
 
 function logOutSend() {
-	//logs the current user out. Sends the user to a different page.
-	localStorage.setItem("currentuserDISTDRIVING", null);
+	//logs the current user out. Sends the user to a different page. Saves changes to user's progress.
+	userdict[currentuser.username].nextRewardProgress = currentuser.nextRewardProgress;
+	userdict[currentuser.username].rewardLevel = currentuser.rewardLevel;
+
+	localStorage.setItem("userdictDISTDRIVING", JSON.stringify(userdict, null, 2));
+	localStorage.removeItem("currentuserDISTDRIVING");
 	document.location.href = "login.html";
 }
 
 function logIn(username) {
 	//logs the user with username in. Does NOT check password validity.
 	localStorage.setItem("currentuserDISTDRIVING", JSON.stringify(userdict[username], null, 2));
+	return 1;
 }
 
 function checkUsernamePassword(username, password) {
@@ -92,7 +105,7 @@ function checkUsernamePassword(username, password) {
 function getCurrentUser() {
 	//returns the user object containing the current user's data. Will error if there is no current user.
 	//if you call this and modify the object you get back, don't expect any changes you make to be persistent.
-	if(not(currentuser))
+	if(currentuser == null)
 		console.error("called getCurrentUser and there was no current user");
 
 	return currentuser;
@@ -100,6 +113,7 @@ function getCurrentUser() {
 
 function userdictClear() {
 	localStorage.removeItem("userdictDISTDRIVING");
+	localStorage.removeItem("currentuserDISTDRIVING");
 }
 
 function checkUsernameInUse(username) {
@@ -110,3 +124,18 @@ function checkUsernameInUse(username) {
 	return 0;
 }
 
+function currentUserProgressModify(toNextReward, newRewardLevel) {
+	//modifies the current user's rewards properties to equal the inputs. IS PERSISTENT. Returns 0 if inputs are bad, but assumes inputs are nonnegative and won't catch it if they are negative.
+	if(toNextReward > 100)
+		return 0;
+	if(newRewardLevel > 6)
+		return 0;
+
+	currentuser.nextRewardProgress = toNextReward;
+	currentuser.rewardLevel = newRewardLevel;
+
+	localStorage.setItem("currentuserDISTDRIVING", JSON.stringify(currentuser, null, 2));
+
+
+	return 1;
+}

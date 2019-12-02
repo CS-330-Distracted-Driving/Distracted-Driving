@@ -1,0 +1,39 @@
+#screen{
+  background-color: cornflowerblue;
+}
+
+.back-button {
+  color: white;
+  font-size: 200%;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  padding: 0px 10px;
+}
+
+.information {
+  color: white; 
+  font-weight: bold;
+  text-align: center; 
+  text-decoration: none;
+  padding: 30px 10px;
+}
+
+.progressinfo { 
+  margin: 5px 0px 0px 0px;    
+}
+
+.progressbarInfo {
+  background-color: cornflowerblue;
+  width: 50%;
+  height: 15px;
+  color: black;
+  text-align: center;
+  line-height: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+h1 {
+  margin: -20px 0px 20px 0px;
+}
