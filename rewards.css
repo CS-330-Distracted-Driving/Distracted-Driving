@@ -9,20 +9,11 @@
 	position: relative;
 	bottom: 30px;
 	border: 1px solid black;
-}
-
-button {
-	font-size: 20;
-	background-color: white;
-	border: none;
-	color: CornflowerBlue;
-	padding: 15px 25px;
-	text-align: center;
+	color: white;
+	padding: 15px 0px;
 	font-weight: bold;
-	text-decoration: none;
-	display: inline-block;
-	border-radius: 12px;
-	cursor: pointer;
+	font-size: 20;
+	cursor: default;
 }
 
 .back-button {
