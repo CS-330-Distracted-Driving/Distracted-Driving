@@ -41,7 +41,6 @@ function setRewards() {
 	if(rewardsLevel < 5) {
 		nascar.style.backgroundColor = "red";
 	}
-
 	if(rewardsLevel == 0) {
 		baby.style.backgroundColor = "gold";
 	}
@@ -56,5 +55,20 @@ function setRewards() {
 	}
 	if(rewardsLevel == 4) {
 		nascar.style.backgroundColor = "gold";
+	}
+	if (rewardsLevel >= 1) {
+		baby.innerHTML = 'Baby Driver';
+	}
+	if (rewardsLevel >= 2) {
+		amateur.innerHTML = 'Amateur';
+	}
+	if (rewardsLevel >= 3) {
+		expert.innerHTML = 'Expert';
+	}	
+	if (rewardsLevel >= 4) {
+		elite.innerHTML = 'Almost Elite';
+	}
+	if (rewardsLevel >= 5) {
+		nascar.innerHTML = 'NASCAR Driver';
 	}
 }
